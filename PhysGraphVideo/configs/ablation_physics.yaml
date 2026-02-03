@@ -1,0 +1,8 @@
+_base_: configs/cvpr_base.yaml
+experiment_name: ablation_physics
+loss:
+  physics:
+    enabled: true
+    accel: 0.5
+    div_smooth: 0.1
+    boundary: 0.05

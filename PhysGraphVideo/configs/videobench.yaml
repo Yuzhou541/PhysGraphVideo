@@ -1,0 +1,39 @@
+# configs/bair.yaml
+exp:
+  name: bair
+  out_dir: runs/bair
+
+model:
+  in_channels: 3
+  hidden: 128
+  layers: 8
+
+train:
+  epochs: 5
+  lr: 2.0e-4
+  weight_decay: 1.0e-4
+  seed: 0
+  log_every: 50
+
+data:
+  name: videobench
+  root: data/videobench
+  T_in: 4
+  T_out: 12
+  stride: 1
+  image_size: 128
+  channels: 3
+  batch_size: 4
+  num_workers: 4
+
+
+loss:
+  recon: 1.0
+  ssim:  0.0
+
+rag:
+  enable: false
+physics:
+  enable: false
+
+device: "cuda"

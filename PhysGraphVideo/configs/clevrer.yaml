@@ -1,0 +1,32 @@
+# 文件路径：configs/clevrer.yaml
+experiment: clevrer_baseline
+
+data:
+  name: clevrer
+  root: data/clevrer
+  t_in: 2
+  t_out: 14
+  stride: 1
+  image_size: 128        # 训练时会Resize到该边长
+  channels: 3
+  batch_size: 8          # RTX4090 可按显存调整
+  num_workers: 0         # Windows 下从0起步更稳
+  pin_memory: false
+
+model:
+  arch: physgraph_small   # 按你仓库默认小模型；若不同请改成已有的键
+  hidden_dim: 256
+  layers: 8
+
+optim:
+  lr: 2.0e-4
+  weight_decay: 0.0
+  epochs: 20
+  seed: 0
+  amp: true
+
+log:
+  out_dir: runs/clevrer
+  ckpt_best: best.pt
+  ckpt_last: last.pt
+  interval: 100

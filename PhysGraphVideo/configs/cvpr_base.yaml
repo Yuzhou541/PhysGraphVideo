@@ -1,0 +1,35 @@
+experiment_name: cvpr_base
+seed: 0
+data:
+  name: bouncing_balls
+  root: data/synthetic/bouncing_balls
+  seq_len: 16
+  pred_len: 12
+  image_size: 64
+  num_sequences: 2000
+  val_sequences: 256
+  batch_size: 8
+model:
+  in_channels: 3
+  hidden_dim: 64
+  film_dim: 128
+  num_layers: 2
+train:
+  epochs: 5
+  lr: 2e-4
+  weight_decay: 1e-6
+  grad_accum: 1
+  log_every: 50
+  ckpt_dir: runs/cvpr_base
+loss:
+  recon: 1.0
+  physics:
+    enabled: false
+    accel: 0.0
+    div_smooth: 0.0
+    boundary: 0.0
+rag:
+  enabled: false
+  topk: 3
+  query: "elastic collisions; constant acceleration; smooth trajectories"
+device: cuda

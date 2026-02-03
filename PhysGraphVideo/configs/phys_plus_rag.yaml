@@ -1,0 +1,6 @@
+_base_: configs/ablation_physics.yaml
+experiment_name: phys_plus_rag
+rag:
+  enabled: true
+  topk: 3
+  query: "inelastic vs elastic; boundary momentum; acceleration smoothness"

@@ -1,0 +1,5 @@
+{"id": "f1", "text": "Elastic collisions conserve kinetic energy and momentum.", "type": "fact"}
+{"id": "f2", "text": "For small timesteps, motion is approximately constant-acceleration.", "type": "fact"}
+{"id": "f3", "text": "Frictionless walls cause specular reflection with restitution near 1.", "type": "fact"}
+{"id": "f4", "text": "Trajectory smoothness implies bounded second temporal derivatives.", "type": "fact"}
+{"id": "f5", "text": "In incompressible flows, divergence of velocity is near zero.", "type": "fact"}

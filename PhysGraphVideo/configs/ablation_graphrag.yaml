@@ -1,0 +1,6 @@
+_base_: configs/cvpr_base.yaml
+experiment_name: ablation_graphrag
+rag:
+  enabled: true
+  topk: 3
+  query: "rigid-body motion; restitution; frictionless walls"

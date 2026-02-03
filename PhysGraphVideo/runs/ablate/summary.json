@@ -1,0 +1,6 @@
+{
+  "base": "runs/cvpr_base/best.pt",
+  "physics": "runs/ablation_physics/best.pt",
+  "graphrag": "runs/ablation_graphrag/best.pt",
+  "phys_plus_rag": "runs/phys_plus_rag/best.pt"
+}

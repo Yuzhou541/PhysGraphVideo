@@ -1,0 +1,42 @@
+# configs/bair.yaml
+exp:
+  name: bair
+  out_dir: runs/bair
+
+model:
+  in_channels: 3
+  hidden: 128
+  layers: 8
+
+train:
+  epochs: 5
+  lr: 2.0e-4
+  weight_decay: 1.0e-4
+  seed: 0
+  log_every: 50
+
+data:
+  dataset: BAIRPushDataset
+  root: data/bair
+  image_size: 64
+  channels: 3
+  T_in: 2
+  T_out: 14
+  stride: 1
+  batch_size: 16
+  num_workers: 4
+  splits:
+    train: train
+    val:   val
+    test:  test
+
+loss:
+  recon: 1.0
+  ssim:  0.0
+
+rag:
+  enable: false
+physics:
+  enable: false
+
+device: "cuda"

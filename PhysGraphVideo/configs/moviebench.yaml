@@ -1,0 +1,39 @@
+# configs/bair.yaml
+exp:
+  name: bair
+  out_dir: runs/bair
+
+model:
+  in_channels: 3
+  hidden: 128
+  layers: 8
+
+train:
+  epochs: 5
+  lr: 2.0e-4
+  weight_decay: 1.0e-4
+  seed: 0
+  log_every: 50
+
+data:
+  name: moviebench          # ← 关键：数据集名称，和 datasets.py 的有效键一致
+  root: data/moviebench     # ← 你的MovieBench根目录，需包含 train/val/test 子目录
+  T_in: 4
+  T_out: 12
+  stride: 1
+  image_size: 128           # 先用128更稳；确认显存后可升到256/320
+  channels: 3
+  batch_size: 4             # evaluate/export_viz 会从 data.batch_size 读
+  num_workers: 4
+
+
+loss:
+  recon: 1.0
+  ssim:  0.0
+
+rag:
+  enable: false
+physics:
+  enable: false
+
+device: "cuda"

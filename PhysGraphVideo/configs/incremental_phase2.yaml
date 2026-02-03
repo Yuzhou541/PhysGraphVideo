@@ -1,0 +1,19 @@
+_base_: configs/ablation_physics.yaml
+experiment_name: phase2_newdomain
+data:
+  name: bouncing_balls
+  root: data/synthetic/bouncing_balls_phase2
+  seq_len: 16
+  pred_len: 12
+  image_size: 64
+  num_sequences: 1500
+  val_sequences: 256
+  batch_size: 8
+incremental:
+  enabled: true
+  ewc_lambda: 60.0
+  exemplars_per_class: 0
+rag:
+  enabled: true
+  topk: 3
+  query: "phase-space conservation; smooth flow"
